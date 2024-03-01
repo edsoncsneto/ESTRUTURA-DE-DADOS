@@ -1,35 +1,27 @@
 package listaDupla;
 
-public class Lista {
+public class ListaDupla {
 	
 	private No ref;
 	
-	public Lista() {
+	public ListaDupla() {
 		this.ref=null;
 	}
 	
-	public void insere(int info) {
-		if(vazia()) {
-			No no = new No(info, ref, null);
-			ref=no;
-			
-		} else {
-			for(No item = ref; item!=null; item=item.getProx()) {
-				if (item==ref) {
-					No no = new No(info, ref, null);
-					item.setAnt(no);
-					ref=no;
-				}
-			}
+	public void inserir(int info) {
+		//crio um novo no
+		No novo = new No(info, ref, null);
+		if(!vazia()) {
+			//crio item para apontar pra minha ref caso a lista nao esteja vazia
+			No item = ref;
+			//torno o anterior do item (referencia) o novo no que eu criei
+			item.setAnt(novo);
 		}
-		
+		//minha referencia passa a ser o novo no (ref apontando sempre para o ultimo no criado)
+		ref = novo;
 	}
 	
-	public boolean vazia() {
-		return ref==null;
-	}
-	
-	public void imprime() {
+	public void imprimir() {
 		if(vazia()) {
 			System.out.println("Lista vazia");
 			return;
@@ -42,7 +34,7 @@ public class Lista {
 		
 	}
 	
-	public void imprime2() {
+	public void imprimir2() {
 		if(vazia()) {
 			System.out.println("Lista vazia");
 			return;
@@ -59,7 +51,11 @@ public class Lista {
 		
 	}
 	
-	public void remove(int item) {
+	public boolean vazia() {
+		return ref==null;
+	}
+	
+	public void remover(int item) {
 		
 		if(vazia()) {
 			return;

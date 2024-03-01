@@ -1,14 +1,14 @@
 package listaCircular;
 
-public class Lista {
+public class ListaCircular {
 	
 	No ref;
 	
-	public Lista() {
+	public ListaCircular() {
 		this.ref = null;
 	}
 	
-	public void insere(int info) {
+	public void inserir(int info) {
 		if(vazia()) {
 			No no = new No(info, ref);
 			no.setProx(no);
@@ -23,9 +23,9 @@ public class Lista {
 		}
 	}
 	
-	public void imprime() {
+	public void imprimir() {
 		if (vazia()) {
-			System.out.println("Lista vazia!");
+			System.out.println("lista vazia");
 			return;
 		}
 		
@@ -35,19 +35,31 @@ public class Lista {
 		System.out.println(ref.getInfo());
 	}
 	
-	public void remove(int info) {
+	public void remover(int item) {
 		
 		if (vazia()) {
+			System.out.println("lista já está vazia");
 			return;
 		}
 		
-		for(No item = ref.getProx(); item!=ref; item=item.getProx()) {
-			
-			if(item.getProx().getInfo()==info) {
-				item.setProx(item.getProx().getProx());
+		if(ref==ref.getProx()) {
+			ref.setProx(null);
+			ref=null;
+			return;
+		}
+		
+		No aux = ref;
+		do {
+			if(aux.getProx().getInfo() == item) {
+				if (item==ref.getInfo()) {
+					ref = ref.getProx();
+				}
+				aux.setProx(aux.getProx().getProx());
 				return;
 			}
-		}
+			aux=aux.getProx();
+			
+		} while(aux!=ref);
 	}
 	
 	public boolean vazia() {
