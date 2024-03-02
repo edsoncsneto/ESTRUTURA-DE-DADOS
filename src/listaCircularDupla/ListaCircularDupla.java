@@ -28,17 +28,15 @@ public class ListaCircularDupla {
 			System.out.println("lista vazia");
 			return;
 		}
-		
+		System.out.println("direção normal: ");
 		for(No item = ref.getProx(); item!=ref; item=item.getProx()) {
 			System.out.print(item.getInfo()+" ");
 		}
 		System.out.println(ref.getInfo());
-	}
-	
-	public void imprimir2() {
-		if(vazia()) {
-			System.out.println("lista vazia");
-			return;
+		
+		System.out.println("direção contrária: ");
+		if (ref == ref.getProx()) {
+			System.out.println(ref.getInfo());
 		}
 		
 		for(No item = ref.getProx(); item!=ref; item=item.getProx()) {
