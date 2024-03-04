@@ -11,7 +11,6 @@ public class Program {
 		lista.inserir(4);
 		lista.inserir(5);
 		lista.imprimir(); //1 2 3 4 5
-		lista.imprimir2(); //5 4 3 2 1
 		lista.remover(3);
 		lista.imprimir(); //1 2 4 5
 		lista.remover(1);
