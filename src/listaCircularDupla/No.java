@@ -1,5 +1,4 @@
 package listaCircularDupla;
-
 public class No {
 
 	private int info;

@@ -7,18 +7,14 @@ public class Program {
 		lista.inserir(0);
 		lista.inserir(1);
 		lista.inserir(2);
-		lista.imprimir();
+		lista.imprimir(); //2 1 0
 		lista.remover(0);
-		lista.imprimir();
 		lista.remover(1);
-		lista.imprimir();
 		lista.remover(2);
-		lista.imprimir();
+		lista.imprimir(); //lista vazia
 		lista.inserir(10);
 		lista.inserir(11);
-		lista.imprimir();
-		lista.remover(11);
-		lista.imprimir();
+		lista.imprimir(); //11 10
 	}
 
 }
