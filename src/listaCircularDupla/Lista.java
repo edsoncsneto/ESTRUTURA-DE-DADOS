@@ -86,14 +86,14 @@ public class Lista {
 					// o item a ser removido é o item apontado pela ref
 					ref = retrocederReferencia(ref, duplicados);
 					// se duplicado for true, trago a ref para o primeiro item anterior a ele que
-					// tenha info diferente o item que recebi para remover
-					// se nao for duplicado, trago a ref para o item anterior a ela independete de
+					// tenha info diferente ao item que recebi para remover
+					// se nao for duplicado, trago a ref para o item anterior a ela independente de
 					// sua info
 					aux = ref.getProx();
 					// meu aux (item que vou remover nas proximas linhas) passar a ser o próximo à
 					// ref
 				}
-				// logico de remover item setando anteriores e proximos
+				// logica de remover item setando anteriores e proximos
 				No auxAnt = aux.getAnt();
 				No auxProx = aux.getProx();
 				aux.getAnt().setProx(auxProx);
