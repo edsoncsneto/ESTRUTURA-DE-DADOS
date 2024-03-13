@@ -29,18 +29,26 @@ public class Lista {
 		StringBuilder sb = new StringBuilder();
 
 		if (vazia()) {
-			sb.append("Lista vazia.");
+			sb.append("lista vazia");
 			return sb.toString();
 		}
 
 		sb.append("Sentido normal:");
 
+		for (No item = ref.getProx(); item != ref; item = item.getProx()) {
+			sb.append(item.getInfo());
+			sb.append(" ");
+		}
+		sb.append(ref.getInfo());
+
+		sb.append("  Sentido contrário:");
+		
 		if (ref == ref.getProx()) {
 			// if para verificar se há apenas um item na lista, pois se houver o próximo for
 			// não é executado como esperado
 			sb.append(ref.getInfo());
 		}
-
+		
 		for (No item = ref.getProx(); item != ref; item = item.getProx()) {
 			if (item.getProx() == ref) {
 				sb.append(ref.getInfo());
@@ -52,13 +60,7 @@ public class Lista {
 
 			}
 		}
-
-		sb.append("  Sentido contrário:");
-		for (No item = ref.getProx(); item != ref; item = item.getProx()) {
-			sb.append(item.getInfo());
-			sb.append(" ");
-		}
-		sb.append(ref.getInfo());
+		
 		return sb.toString();
 	}
 
@@ -69,8 +71,8 @@ public class Lista {
 			return;
 		}
 
-		// se tiver apenas um
-		if (ref == ref.getProx()) {
+		// se tiver apenas um ou se tiver dois iguais e duplicados for true
+		if (ref == ref.getProx() || ref.getAnt() == ref.getProx() && duplicados) {
 			ref.setProx(null);
 			ref.setAnt(null);
 			ref = null;

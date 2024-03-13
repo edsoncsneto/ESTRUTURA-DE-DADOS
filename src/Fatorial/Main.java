@@ -1,4 +1,4 @@
-package Fatorial;
+package fatorial;
 
 public class Main {
 
