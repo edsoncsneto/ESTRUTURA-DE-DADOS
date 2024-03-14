@@ -6,7 +6,9 @@ public class Program {
 		
 		lista.insere(5);
 		lista.insere(5);
-		lista.remove(4, true);
-		System.out.println(lista.imprime());	
+	
+		System.out.println(lista.imprime());
+		lista.remove(5, true);
+		System.out.println(lista.imprime());
 	}
 }
