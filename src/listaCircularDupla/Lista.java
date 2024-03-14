@@ -72,7 +72,7 @@ public class Lista {
 		}
 
 		// se tiver apenas um ou se tiver dois iguais e duplicados for true
-		if (ref == ref.getProx() || ref.getAnt() == ref.getProx() && duplicados) {
+		if (ref == ref.getProx() && ref.getInfo() == info || ref.getAnt() == ref.getProx() && duplicados && ref.getInfo() == info) {
 			ref.setProx(null);
 			ref.setAnt(null);
 			ref = null;
